@@ -33,7 +33,7 @@ Smaller bundles will help you respect [AWS quotas][quotas].
 | Total deployment packages                         | 75 GB  |
 
 
-# Guardian is your solution to easily check all your bundles
+# Guardian is your solution to easily check the size of your bundles
 
 [Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB. This is a demanding rule because this threshold can easily be reached. Gather your team and decide what size the bundles should be limited to.
 
