@@ -16,7 +16,7 @@ A light bundle will positively impact your Serverless architecture for at least 
 
 ## 1. A light deployment package reduces the cold start of your Lambda function
 
-Not only does the size impact the time it takes to upload the bundle, it also significantly impacts the cold start.
+Reducing the size of the bundle will reduce the time it takes to upload the bundle, and also significantly reduce the lambda's cold start.
 
 ![Cold start durations](./assets/bundle-size-impact-on-cold-start.png 'Cold start durations per deployment size (https://mikhail.io/serverless/coldstarts/aws/#does-package-size-matter)')
 
