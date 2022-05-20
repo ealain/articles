@@ -35,7 +35,7 @@ Smaller bundles will help you respect [AWS quotas][quotas].
 
 # Guardian is your solution to easily check all your bundles
 
-[Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB. This is a demanding rule because this threshold can easily be reached. Gather your team and decide what deployment bundles should be limited to.
+[Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB. This is a demanding rule because this threshold can easily be reached. Gather your team and decide what size the bundles should be limited to.
 
 Guardian comes with **many rules** to help you make the best decisions for your Serverless project. Guardian will help you identify where your code can be optimized to achieve better performance at a lower cost.
 
