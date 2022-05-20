@@ -1,6 +1,6 @@
 ---
 published: false
-title: 'Best practice (1): control the size of your Lambda function bundle'
+title: 'AWS Lambda 101: Shave That Bundle Down'
 cover_image:
 description: ''
 tags: serverless, lambda, quality, AWS
