@@ -8,7 +8,7 @@ series:
 canonical_url:
 ---
 
-_This article is part of a series on [Guardian][guardian], an open-source, highly configurable, automated best-practice audit tool for Serverless architectures._
+_This article is part of a series on [Guardian][guardian], an open-source, highly configurable, automated best-practice audit tool for AWS serverless architectures._
 
 # The lighter, the better
 
