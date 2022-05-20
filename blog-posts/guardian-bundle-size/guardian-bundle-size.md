@@ -16,11 +16,11 @@ A light bundle will positively impact your Serverless architecture for at least 
 
 ## 1. A light deployment package reduces the cold start of your Lambda function
 
-The Serverless Framework automatically bundles your code and uploads it to AWS. The underlying tools are [serverless-webpack][serverless-webpack] or [serverless-esbuild][serverless-esbuild], which should be preferred for its shorter configuration and better performance.
-
 Not only does the size impact the time it takes to upload the bundle, it also significantly impacts the cold start.
 
 ![Cold start durations](./assets/bundle-size-impact-on-cold-start.png 'Cold start durations per deployment size (https://mikhail.io/serverless/coldstarts/aws/#does-package-size-matter)')
+
+You should use appropriate tools to bundle your Lambda functions with a minimal size. For example, the Serverless Framework automatically bundles your code and uploads it to AWS. In Node.js functions, the underlying tools are [serverless-webpack][serverless-webpack] or [serverless-esbuild][serverless-esbuild], which should be preferred for its shorter configuration and better performance.
 
 ## 2. AWS enforces quotas on deployment resources
 
