@@ -58,7 +58,7 @@ sls-dev-tools --ci [-l {YOUR_PROJECT_LOCATION}] [-p {PROFILE}] [-n {YOUR_STACK_N
 
 There are plenty of tools out there to optimize the size of your bundles. For instance the [Serverless Analyze Bundle Plugin][serverless-analyze-bundle-plugin] integrates with the Serverless Framework and helps you diagnose which of your NodeJS dependency is not properly tree-shaked.
 
-[guardian]: https://github.com/aleios-cloud/sls-dev-tools#guardian
+[guardian]: https://github.com/Kumo-by-Theodo/guardian
 [quotas]: https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
 [serverless-analyze-bundle-plugin]: https://github.com/adriencaccia/serverless-analyze-bundle-plugin
 [serverless-webpack]: https://github.com/serverless-heaven/serverless-webpack
