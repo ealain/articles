@@ -27,11 +27,10 @@ You should use appropriate tools to bundle your Lambda functions with a minimal 
 Smaller bundles will help you respect [AWS quotas][quotas].
 
 | Resource                                          | Quota  |
-|---------------------------------------------------|--------|
+| ------------------------------------------------- | ------ |
 | Lambda function deployment package (zipped)       | 50 MB  |
 | Lambda function deployment package (uncompressed) | 250 MB |
 | Total deployment packages                         | 75 GB  |
-
 
 # Guardian is your solution to easily check the size of your bundles
 
@@ -44,11 +43,13 @@ Guardian comes with **many rules** to help you make the best decisions for your 
 Using Guardian is very easy.
 
 Install `sls-dev-tools`
+
 ```
 npm -g install sls-dev-tools
 ```
 
 Check your deployment
+
 ```
 sls-dev-tools --ci [-l {YOUR_PROJECT_LOCATION}] [-p {PROFILE}] [-n {YOUR_STACK_NAME}] [-r {YOUR_REGION}] [-t {START_TIME}] [-i {INTERVAL}]
 ```
