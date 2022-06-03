@@ -20,7 +20,7 @@ Reducing the size of the bundle will reduce the time it takes to upload the bund
 
 ![Cold start durations](./assets/bundle-size-impact-on-cold-start.png 'Cold start durations per deployment size (https://mikhail.io/serverless/coldstarts/aws/#does-package-size-matter)')
 
-You should use appropriate tools to bundle your Lambda functions with a minimal size. For example, the Serverless Framework automatically bundles your code and uploads it to AWS. In Node.js functions, the underlying tools are [serverless-webpack][serverless-webpack] or [serverless-esbuild][serverless-esbuild], which should be preferred for its shorter configuration and better performance.
+You should use appropriate tools to bundle your Lambda functions with a minimal size. For example, the Serverless Framework, with the [serverless-esbuild][serverless-esbuild] plugin, automatically bundles your code and uploads it to AWS.
 
 ## 2. AWS enforces quotas on deployment resources
 
