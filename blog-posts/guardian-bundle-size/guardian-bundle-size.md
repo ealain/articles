@@ -24,7 +24,7 @@ You should use appropriate tools to bundle your Lambda functions with a minimal 
 
 ## 2. AWS enforces quotas on deployment resources
 
-Smaller bundles will help you respect [AWS quotas][quotas].
+Smaller bundles will help you respect [AWS quotas][quotas], allowing more functions in your AWS account!
 
 | Resource                                          | Quota  |
 | ------------------------------------------------- | ------ |
