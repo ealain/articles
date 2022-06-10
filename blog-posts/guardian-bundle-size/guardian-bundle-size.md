@@ -34,32 +34,29 @@ Smaller bundles will help you respect [AWS quotas][quotas], allowing more functi
 
 # Guardian is your solution to easily check the size of your bundles
 
-[Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB. This is a demanding rule because this threshold can easily be reached. Gather your team and decide what size the bundles should be limited to.
+[Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB.
 
 Guardian comes with **many rules** to help you make the best decisions for your Serverless project. It will help you identify where your code can be optimized to achieve better performance at a lower cost.
 
 # Guardian how-to
 
-Using Guardian is very easy.
-
-Install `sls-dev-tools`
-
 ```
-npm -g install sls-dev-tools
+npm install @kumo-by-theodo/guardian
+npx guardian -p <your_aws_profile> -c <your_stack_name>
 ```
 
-Check your deployment
-
-```
-sls-dev-tools --ci [-l {YOUR_PROJECT_LOCATION}] [-p {PROFILE}] [-n {YOUR_STACK_NAME}] [-r {YOUR_REGION}] [-t {START_TIME}] [-i {INTERVAL}]
-```
+Guardian is available on [NPM][npm-registry]. You will find instructions to use Guardian in your CI.
 
 # See also
 
 There are plenty of tools out there to optimize the size of your bundles. For instance the [Serverless Analyze Bundle Plugin][serverless-analyze-bundle-plugin] integrates with the Serverless Framework and helps you diagnose which of your NodeJS dependency is not properly tree-shaked.
+
+For more details on bundle size impact, take a look at [Mikhail Shilkov's blog][mikhail-blog].
 
 [guardian]: https://github.com/Kumo-by-Theodo/guardian
 [quotas]: https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
 [serverless-analyze-bundle-plugin]: https://github.com/adriencaccia/serverless-analyze-bundle-plugin
 [serverless-webpack]: https://github.com/serverless-heaven/serverless-webpack
 [serverless-esbuild]: https://github.com/floydspace/serverless-esbuild
+[mikhail-blog]: https://mikhail.io/serverless/coldstarts/aws/#does-package-size-matter
+[npm-registry]: https://www.npmjs.com/package/@kumo-by-theodo/guardian
