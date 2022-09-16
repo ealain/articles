@@ -1,18 +1,18 @@
 ---
 published: false
-title: 'Guardian 1.0.0 is released! Your Free Open Source alternative to AWS Trusted Advisor'
+title: 'Guardian 1.0.0 available now! Your Free Open Source audit tool for AWS architectures!'
 cover_image: 'https://dev-to-uploads.s3.amazonaws.com/uploads/articles/slzm4vusv17fgkvinoyo.png'
 description: 'Announcing the first stable version of Guardian, a free open source audit tool for AWS architectures.'
 tags: lambda, quality, AWS, audit
-series:
+series: guardian
 canonical_url:
 ---
 
-### Hi there! **Guardian 1.0.0** is out! 🚀
+### Hi there! **Guardian 1.0.0** is now available! 🚀
 
 # TL;DR
 
-**Guardian** is a command line tool that produces a detailed **report** of the **improvements** you can make to your **AWS architecture**.
+[Guardian](https://github.com/Kumo-by-Theodo/guardian) is a command line tool that produces a detailed **report** of the **improvements** you can make to your **AWS architecture**.
 
 ### As a developer, I use Guardian to ensure that my project meets the highest quality standards
 
@@ -34,7 +34,7 @@ npx @kumo-by-theodo/guardian
 
 ### How does Guardian work?
 
-Under the hood, Guardian uses the AWS SDK to check your provisioned resources against a set of rules. As a reult, Guardian is **compatible with all frameworks** (Serverless, CDK, Terraform, CloudFormation, ...).
+Under the hood, Guardian uses the AWS SDK to check your provisioned resources against a set of rules. As a result, Guardian is **compatible with all frameworks** (Serverless, CDK, Terraform, CloudFormation, ...).
 
 # Guardian is designed for you
 
@@ -88,16 +88,16 @@ This snippet will run Guardian after merge.
 
 ```yaml
 guardian:
-  image: # your image with node14
+  image: node:16.17.0
   stage:
-    - post-deploy-test
+    - post-deploy-test # the stage after your deployment
   extends:
     - .setup-cli # setup AWS CLI (export environment variables)
   needs:
-    - install
+    - install # the job that installs your dependencies
   script:
-    - yarn guardian -r eu-west-1 -c # your stacks
-  allow_failure: true
+    - yarn guardian -r eu-west-1 -c <stacks> # fill in the stacks you want to check
+  allow_failure: true # allow the job to fail, when you want to run subsequent tests
 ```
 
 #### Circle CI
@@ -110,15 +110,15 @@ jobs:
     docker:
       - image: cimg/node:16.17.0
     steps:
-      - checkout
-      - setup-aws-cli
-      - install
+      - checkout # checkout your code
+      - setup-aws-cli # setup AWS CLI (export environment variables)
+      - install # install your dependencies
       - run: yarn guardian -p my-aws-profile -c my-stack-1 my-stack-2
 workflows:
   weekly-guardian-checks:
     triggers:
       - schedule:
-          cron: '0 1 * * 0'
+          cron: '0 1 * * 0' # run at 01:00 on Sundays
           filters:
             branches:
               only:
@@ -126,6 +126,8 @@ workflows:
     jobs:
       - guardian-checks
 ```
+
+> ⚠ You should be running at least Node v16 to get the appropriate return code.
 
 ## Some issues are more important to you than others
 
@@ -159,20 +161,24 @@ We are currently working on a check to avoid infinite log retention in CloudWatc
 
 Starting from version 1.0.0, whenever a new rule is added, at least the minor version will be bumped.
 
-> ⚠ Be careful, if Guardian is configured to stop your deployment whenever a rule fails, not to allow any minor version update, as the introduction a new rule could suddenly stop your deployment.
+> ⚠ If Guardian is configured to stop your deployment whenever a rule fails, do not to allow any minor version update (see [semver](https://docs.npmjs.com/cli/v6/using-npm/semver)), as the introduction of a new rule could suddenly stop your deployment.
 
-# What makes Guardian different from AWS Trusted Advisor?
+# Guardian: AWS Trusted Advisor's little brother?
+
+On your path to a perfect AWS Cloud architecture, Guardian is a good first step before the advanced [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/).
+
+Guardian's background is a different from AWS Trusted Advisor because rules are sourced from the community. Because Guardian uses the AWS SDK, power users can also add their own rules with maximum flexibility.
 
 | Solution | Cost | Source |
 | --- | --- | --- |
 | Guardian | Free | Community |
 | Trusted Advisor | Start from $29 / month ([depends on your plan and monthly AWS charges](https://aws.amazon.com/premiumsupport/pricing)) | AWS |
 
-Because Guardian uses the AWS SDK, it offers the maximum flexibility to write rules.
+In the end, both tools may be used together. ✨
 
-# About
+# About Kumo
 
-This project was started at Kumo, a group of passionate developers highly experienced in Serverless architectures for the Web, to bring the highest quality solutions to our clients. Guardian has many valuable learnings of our team to help you learn faster.
+This project was started at [Kumo](https://www.theodo.com/experts/serverless), a group of passionate developers highly experienced in Serverless architectures for the Web, to bring the highest quality solutions to our clients. Guardian has many valuable learnings of our team to help _you_ learn faster.
 
 Feel free to reach out to us on [Twitter](https://twitter.com/kumoserverless) if you have any questions or feedback.
 
