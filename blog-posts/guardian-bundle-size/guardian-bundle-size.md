@@ -4,7 +4,7 @@ title: 'AWS Lambda 101: Shave That Bundle Down'
 cover_image:
 description: ''
 tags: serverless, lambda, quality, AWS
-series:
+series: guardian
 canonical_url:
 ---
 
