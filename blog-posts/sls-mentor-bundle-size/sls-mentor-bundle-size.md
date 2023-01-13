@@ -4,11 +4,11 @@ title: 'AWS Lambda 101: Shave That Bundle Down'
 cover_image:
 description: ''
 tags: serverless, lambda, quality, AWS
-series: guardian
+series: sls-mentor
 canonical_url:
 ---
 
-_This article is part of a series on [Guardian][guardian], an open-source, highly configurable, automated best-practice audit tool for AWS serverless architectures._
+_This article is part of a series on [sls-mentor][sls-mentor], an open-source, highly configurable, automated best-practice audit tool for AWS serverless architectures._
 
 # The lighter, the better
 
@@ -32,20 +32,20 @@ Smaller bundles will help you respect [AWS quotas][quotas], allowing more functi
 | Lambda function deployment package (uncompressed) | 250 MB |
 | Total deployment packages                         | 75 GB  |
 
-# Guardian is your solution to easily check the size of your bundles
+# sls-mentor is your solution to easily check the size of your bundles
 
-[Guardian][guardian] now offers a **new rule** to warn you when uploading bundles over 5 MB.
+[sls-mentor][sls-mentor] now offers a **new rule** to warn you when uploading bundles over 5 MB.
 
-Guardian comes with **many rules** to help you make the best decisions for your Serverless project. It will help you identify where your code can be optimized to achieve better performance at a lower cost.
+sls-mentor comes with **many rules** to help you make the best decisions for your Serverless project. It will help you identify where your code can be optimized to achieve better performance at a lower cost.
 
-# Guardian how-to
+# sls-mentor how-to
 
 ```
-npm install @kumo-by-theodo/guardian
-npx guardian -p <your_aws_profile> -c <your_stack_name>
+npm install @sls-mentor/sls-mentor
+npx sls-mentor -p <your_aws_profile> -c <your_stack_name>
 ```
 
-Guardian is available on [NPM][npm-registry]. You will find instructions to use Guardian in your CI.
+sls-mentor is available on [NPM][npm-registry]. You will find instructions to use sls-mentor in your CI.
 
 # See also
 
@@ -53,10 +53,10 @@ There are plenty of tools out there to optimize the size of your bundles. For in
 
 For more details on bundle size impact, take a look at [Mikhail Shilkov's blog][mikhail-blog].
 
-[guardian]: https://github.com/Kumo-by-Theodo/guardian
+[sls-mentor]: https://github.com/sls-mentor/sls-mentor
 [quotas]: https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
 [serverless-analyze-bundle-plugin]: https://github.com/adriencaccia/serverless-analyze-bundle-plugin
 [serverless-webpack]: https://github.com/serverless-heaven/serverless-webpack
 [serverless-esbuild]: https://github.com/floydspace/serverless-esbuild
 [mikhail-blog]: https://mikhail.io/serverless/coldstarts/aws/#does-package-size-matter
-[npm-registry]: https://www.npmjs.com/package/@kumo-by-theodo/guardian
+[npm-registry]: https://www.npmjs.com/package/sls-mentor
