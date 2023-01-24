@@ -75,7 +75,7 @@ Head over to the CloudFront service in the console.
 
 Create of modify the distribution of your choice. Here, let’s assume the origin is S3 (alternatively this could be your own HTTP server).
 
-![edit-behavior](./assets/edit-behavior.png)
+![edit-behavior](./assets/fleur-de-tournesol.png)
 
 Now, you can look for the Response headers policy section and choose SecurityHeadersPolicy.
 
