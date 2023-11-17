@@ -1,5 +1,9 @@
 [
   {
+    "id": 1669851,
+    "relativePathToArticle": "./blog-posts/clean-authorization/clean-authorization.md"
+  },
+  {
     "id": 1077436,
     "relativePathToArticle": "./blog-posts/sls-mentor-bundle-size/sls-mentor-bundle-size.md"
   },
