@@ -36,7 +36,6 @@ export const handler = async (event, context) => {
   const userId = context.requestContext.authorizer.userId;
   const organizationId = event.pathParameters.organizationId;
   const user = await getUser(userId);
-  // 🐍 deny list based authorization
   if (!user.organizations.includes(organizationId)) {
     return {
       statusCode: 403,
@@ -69,9 +68,10 @@ In many cases, you will have to write the same authorization code in multiple fu
 
 Using a middleware will separate authorization code from the business logic and make it much **easier to read**.
 
-Organizing your code in layers helps a lot. You can also enrich the context with the user information in a middleware, for later use in subsequent steps.
+Organizing your code in layers helps a lot. For example, you can enrich the context with the user information in a middleware, before authorization, for later use in subsequent steps:
 
 ```typescript
+// Add the user to the context to use this information later in the authorization step
 // src/middlewares/addUserToContext.ts
 
 export const addUserToContext = async (event, context) => {
@@ -131,6 +131,7 @@ Again, leverage middleware to extract the authorization code from the business l
 # 📁 Use file hierarchy to identify shared and specific code
 
 Mind the **file hierarchy**. You should identify shared and specific code at a glance 👀 Below you can see that every handler might have a specific `validateAccess` logic, while shared middleware is available higher in the hierarchy.
+
 ```
 src/
   handlers/
